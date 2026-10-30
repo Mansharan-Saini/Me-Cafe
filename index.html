@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Shop </title>
+    <!--link to CSS-->
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Box Icons-->
+    <link
+     href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+     rel='stylesheet'
+    />
+    <!-- Link Swiper's CSS -->
+    <link 
+      rel="stylesheet" 
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" 
+    />
+</head>
+<body>
+    <!-- Header -->
+     <header>
+       <!-- Nav -->
+        <div class="nav container">
+            <!-- Logo -->
+             <a href="#" class="logo">Me.Cafe</a>
+             <!-- Navbar -->
+            <div class="navbar">
+             <a href="#home" class="nav-link">Home</a>
+             <a href="#services" class="nav-link">Services</a>
+             <a href="#products" class="nav-link">Products</a>
+             <a href="#team" class="nav-link">Team</a>
+             <a href="#review" class="nav-link">Reviews</a>
+            </div>
+        <!-- Nav Icons -->
+         <div class="nav-icons">
+             <!-- Main content -->
+             <a href="#authModal" aria-label="Sign up or sign in"><i class="bx bx-user"></i></a>            
+            <!-- Shopping Cart -->
+            <a href="#shopping" aria-label="Shopping cart"><i class="bx bx-shopping-bag"></i></a>
+            <!-- Menu Icon -->
+             <div class="menu-icon">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+             </div>
+         </div>
+       </div>   
+      </header>
+     <!-- Cart Model -->
+      <div class="shopping-bag">
+        <div id="cartModal" role="dialog" aria-label="Your shopping cart" aria-modal="true">
+          <h3>Your Shopping Cart</h3>
+          <div id="cartItems" aria-live="polite"></div>
+          <p id="totalPrice">Total: $0</p>
+          <button type="button" onclick="closeCart()">Close Cart</button>
+        </div>
+      </div>
+
+<!-- Modal with both Sign In and Sign Up forms -->
+<div id="authModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">×</span>
+    <h2 id="modalTitle">Sign In</h2>
+    
+    <!-- Sign Up Form -->
+    <div id="signUpForm">
+      <form id="signUpFormContent">
+        <label for="signUpUsername">Username:</label>
+        <input type="text" id="signUpUsername" name="username" required><br><br>
+
+        <label for="signUpEmail">Email:</label>
+        <input type="email" id="signUpEmail" name="email" required><br><br>
+
+        <label for="signUpPassword">Password:</label>
+        <input type="password" id="signUpPassword" name="password" required><br><br>
+
+        <label for="signUpConfirmPassword">Confirm Password:</label>
+        <input type="password" id="signUpConfirmPassword" name="confirmPassword" required><br><br>
+
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <span onclick="switchToSignIn()">Sign In</span></p>
+    </div>
+
+    <!-- Sign In Form -->
+    <div id="signInForm" style="display:none;">
+      <form id="signInFormContent">
+        <label for="signInEmail">Email:</label>
+        <input type="email" id="signInEmail" name="email" required><br><br>
+
+        <label for="signInPassword">Password:</label>
+        <input type="password" id="signInPassword" name="password" required><br><br>
+
+        <button type="submit">Sign In</button>
+      </form>
+      <p>Don't have an account? <span onclick="switchToSignUp()">Sign Up</span></p>
+    </div>
+  </div>
+</div>
+
+     <!-- Home -->
+      <section class="home container" id="home">
+        <div class="home-text">
+            <h1>
+                Enjoy a new blend <br/> 
+                of coffee beans
+            </h1>
+            <p>
+                Brew or order a Perfect Coffee based on your mood Anywhere Anytime
+            </p>
+            <a href="#products" class="btn">
+                <span>Shop Now</span>
+                <i class='bx bx-up-arrow-alt' ></i>
+            </a>
+        </div>
+        <!-- Home Image-->
+         <img src="images/hero.png" alt="" class="home-img">
+      </section>
+      <!-- Services -->
+       <section class="service containter" id="services">
+        <!--Heading-->
+        <div class="heading">
+            <h2>
+                Blending culture, coffee & top <br/>
+                notch services
+            </h2>
+        </div>
+        <div class="service-content">
+          <div class="ser-box">
+            <img src="images/ser-1.png" alt="">
+            <p>Equiment</p>
+          </div>
+          <div class="ser-box">
+            <img src="images/ser-2.png" alt="">
+            <p>Type Of Coffee</p>
+          </div>
+          <div class="ser-box">
+            <img src="images/ser-3.png" alt="">
+            <p>Take A Way</p>
+          </div>
+          <div class="ser-box">
+            <img src="images/ser-4.png" alt="">
+            <p>Beans Varient</p>
+          </div>
+          <div class="ser-box">
+            <img src="images/ser-5.png" alt="">
+            <p>Pastry</p>
+          </div> 
+        </div>
+     </section> 
+     <!-- Products -->
+      <section class="products container" id="products">
+        <!-- Heading -->
+         <div class="heading">
+          <h2> Our Top Selling Products</h2>'
+          <p>
+            It takes a lot of heart and hard work at every step to create the best 
+            coffee possible, and we know it takes a lot of grit to keep your own 
+            grind going.
+          </p>
+         </div>
+         <!-- Product Content -->
+          <div class="product-content">
+            <!-- Box 1 -->
+             <div class="product-box">
+              <i class='bx bx-heart heart-icon'></i>
+              <img src="images/product-1.jpg" alt="Instant Coffee">
+              <p>4 Types Available</p>
+              <h2>Instant Coffee</h2>
+              <div class="product-info">
+                <span>$12</span>
+                <i class='bx bx-shopping-bag' role="button" tabindex="0" aria-label="Add Instant Coffee to cart"></i>
+              </div>
+                             
+             </div>
+            <!-- Box 2 -->
+             <div class="product-box">
+              <i class='bx bx-heart heart-icon'></i>
+              <img src="images/product-2.jpg" alt="">
+              <p>4 Types Available</p>
+              <h2>Black Coffee</h2>
+              <div class="product-info">
+                <span>$15</span>
+                <i class='bx bx-shopping-bag' role="button" tabindex="0" aria-label="Add Black Coffee to cart"></i>
+              </div>
+             </div>
+            <!-- Box 3 -->
+             <div class="product-box">
+              <i class='bx bx-heart heart-icon'></i>
+              <img src="images/product-3.jpg" alt="">
+              <p>4 Types Available</p>
+              <h2>Latte</h2>
+              <div class="product-info">
+                <span>$20</span>
+                <i class='bx bx-shopping-bag' role="button" tabindex="0" aria-label="Add Latte to cart"></i>
+              </div>
+             </div>
+            <!-- Box 4 -->
+             <div class="product-box">
+              <i class='bx bx-heart heart-icon'></i>
+              <img src="images/product-4.jpg" alt="">
+              <p>4 Types Available</p>
+              <h2>Cappuccino</h2>
+              <div class="product-info">
+                <span>$18</span>
+                <i class='bx bx-shopping-bag' role="button" tabindex="0" aria-label="Add Cappuccino to cart"></i>
+              </div>
+             </div>
+            <!-- Box 5 -->
+             <div class="product-box">
+              <i class='bx bx-heart heart-icon'></i>
+              <img src="images/product-5.jpg" alt="">
+              <p>4 Types Available</p>
+              <h2>Expresso</h2>
+              <div class="product-info">
+                <span>$14</span>
+                <i class='bx bx-shopping-bag' role="button" tabindex="0" aria-label="Add Expresso to cart"></i>
+              </div>
+             </div>
+            <!-- Box 6 -->
+             <div class="product-box">
+              <i class='bx bx-heart heart-icon'></i>
+              <img src="images/product-6.jpg" alt="">
+              <p>4 Types Available</p>
+              <h2>Mocha</h2>
+              <div class="product-info">
+                <span>$16</span>
+                <i class='bx bx-shopping-bag' role="button" tabindex="0" aria-label="Add Mocha to cart"></i>
+              </div>
+             </div>
+            </div> 
+            
+      </section>
+      <!-- Team -->
+       <section class="team container" id="team">
+        <div class="heading">
+          <h2>Meet Our Experts</h2>          
+        </div>
+        <!-- Team Content -->
+         <div class="team-content">
+          <div class="team-box">
+            <img src="images/team-1.png" alt="">
+            <h2>Tom Zones</h2>
+            <span>Co- Lead Chef</span>
+            <p>
+              As a roaster we search the world over to establish relationships
+              with great farmers cultivating great coffees,
+            </p>
+          </div>
+          <div class="team-box">
+            <img src="images/team-2.png" alt="">
+            <h2>Selena Zones</h2>
+            <span>Lead Chef</span>
+            <p>
+              As a roaster we search the world over to establish relationships
+              with great farmers cultivating great coffees,
+            </p>
+          </div>
+          <div class="team-box">
+            <img src="images/team-3.png" alt="">
+            <h2>Talyor Zone</h2>
+            <span>Co- Lead Chef</span>
+            <p>
+              As a roaster we search the world over to establish relationships
+              with great farmers cultivating great coffees,
+            </p>
+          </div>
+         </div>
+       </section>
+       <!-- Reviews -->
+        <section class="review container" id="review">
+          <div class="heading">
+            <h2>Customer's Reviews</h2>
+          </div>
+          <!-- Swiper -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div class="review-box">
+                  <img src="images/review-1.png" alt="">
+                  <h2>Jonas Blue</h2>
+                  <span>The taste of coffee is stunning,<br/>
+                    subtle and smooth flavor.</span
+                  >
+                  <p>
+                    The taste of coffee can very depending on the type of bean, roast level, and brewing method used. Some people prefer a strong and bold taste, while others prefer a more subtle and smooth flavor.
+                  </p>
+                </div>
+              </div>             
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <div class="review-box">
+                  <img src="images/review-2.png" alt="">
+                  <h2>Eden Blue</h2>
+                  <span>The taste of coffee is stunning,<br/>
+                    subtle and smooth flavor.</span
+                  >
+                  <p>
+                    The taste of coffee can very depending on the type of bean, roast level, and brewing method used. Some people prefer a strong and bold taste, while others prefer a more subtle and smooth flavor.
+                  </p>
+                </div>
+              </div>             
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <div class="review-box">
+                  <img src="images/review-3.png" alt="">
+                  <h2>Charlie</h2>
+                  <span>The taste of coffee is stunning,<br/>
+                    subtle and smooth flavor.</span
+                  >
+                  <p>
+                    The taste of coffee can very depending on the type of bean, roast level, and brewing method used. Some people prefer a strong and bold taste, while others prefer a more subtle and smooth flavor.
+                  </p>
+                </div>
+              </div>             
+            </div>             
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
+        <!-- Book -->
+        <section class="book container" id="book">
+          <img src="images/book.jpg" alt="" class="book-img">
+          <div class="book-overlay"></div>
+          <div class="book-data">
+           <h2>Let's book a Table <br />
+            For you
+           </h2>
+           <form>
+            <div class="input-box">
+              <i class='bx bx-phone-call'></i>
+              <input type="tel" name="phone" placeholder="Your Number" aria-label="Your phone number" required>
+            </div>
+            <div class="input-box">
+              <i class='bx bx-user'></i>
+              <input type="number" name="people" placeholder="People" aria-label="Number of people" min="1" max="20" required>
+            </div>
+            <button type="submit" class="book-btn">Book Table</button>
+           </form>
+           <p>We will contact you to confirm your booking</p>
+          </div>
+        </section>
+        <!-- Footer -->
+         <section class="footer container">
+          <div class="footer-box">
+            <a href="#" class="logo">Me.cafe</a>
+            <div class="social">
+              <a href="#"><i class='bx bxl-twitch'></i></a>
+              <a href="#"><i class='bx bxl-twitter'></i></a>
+              <a href="#"><i class='bx bxl-linkedin'></i></a>
+              <a href="#"><i class='bx bxl-youtube'></i></a>
+            </div>            
+          </div>
+          <div class="footer-box">
+            <h3>About</h3>
+            <a href="#">Our Story</a>
+            <a href="#">FAQ</a>
+            <a href="#">Carrers</a>
+          </div>
+          <div class="footer-box">
+            <h3>Customer's Recourses</h3>
+            <a href="#">Menu</a>
+            <a href="#">Location</a>
+            <a href="#">Support</a>
+          </div>
+          <div class="footer-box">
+            <h3>Services</h3>
+            <a href="#">Payment Options</a>
+            <a href="#">Refunds & Exchanges</a>
+            <a href="#">Limitation Of Liability</a>
+          </div>
+         </section>
+         <!-- Copyright -->
+          <p class="copyright">&#169; MECAFE</p>
+          <!-- ScrollReveal -->
+          <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!--Link to JS-->
+    <script src="js\main.js"></script>
+</body>
+</html>
+                         
